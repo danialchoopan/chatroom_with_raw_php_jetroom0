@@ -18,10 +18,22 @@ if (is_user_login()) {
 <body>
 <div class="form-box">
     <form action="../assets/php/auth.php" method="post">
-        <h1>ورود به جتروم</h1>
+        <h1 class="form-box-h1">ورود به جتروم</h1>
+        <?php
+        if (isset($_SESSION['msg']) || isset($_SESSION['msg_status'])):
+            ?>
+            <p class="form-box-p <?php echo $_SESSION['msg_status']; ?>-box">
+                <?php echo $_SESSION['msg']; ?>
+            </p>
+            <?php
+            unset($_SESSION['msg']);
+            unset($_SESSION['msg_status']);
+        endif;
+        ?>
+
         <input type="text" name="frm_login[username]" placeholder="نام کاربری">
         <input type="password" name="frm_login[password]" placeholder="رمز عبور">
-        <input type="submit" name="submit_btn" value="وارد شو">
+        <input type="submit" name="submit_btn" value="ورود">
     </form>
 </div>
 </body>

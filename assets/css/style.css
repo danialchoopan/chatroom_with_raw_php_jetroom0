@@ -5,10 +5,12 @@
     box-sizing: border-box;
     font-family: Vazir;
 }
-body{
-    background:url("../img/backgrand_formbox.jpg") no-repeat ;
+
+body {
+    background: url("../img/backgrand_formbox.jpg") no-repeat;
     background-size: cover;
 }
+
 .form-box {
     width: 600px;
     height: auto;
@@ -16,8 +18,9 @@ body{
     border-radius: 5px;
     box-shadow: 0 0 5px #ccc;
     background: #252a34;
-    top: 50%; right: 50%;
-    transform: translate(50%,-50%);
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
     position: absolute;
 
 }
@@ -50,8 +53,25 @@ input[type="submit"]:hover {
     background: #ff2e63;
     color: #000;
 }
-h1{
+
+.form-box-p {
+    text-align: center;
+    color: #ffffff;
+    padding: 5px;
+}
+
+.form-box-h1 {
     text-align: center;
     color: #ffffff;
     padding: 25px;
+}
+
+.success-box {
+    background-color: forestgreen;
+    border-radius: 5px;
+}
+
+.error-box {
+    background-color: indianred;
+    border-radius: 5px;
 }
