@@ -4,6 +4,8 @@ $(document).ready(function () {
         if (e.keyCode === 13) {
             if (e.target.value !== "") {
                 let msg_text = e.target.value;
+                $('#msg_text').attr("disabled", "true");
+                e.target.value = "پیام شما در حال ارسال میباشد";
                 $.ajax({
                     type: 'POST',
                     url: 'assets/php/messages.php?msg_do=send',
@@ -12,11 +14,15 @@ $(document).ready(function () {
                         e.target.value = "";
                         if (data.status === "error") {
                             $("#show_error").innerText("پیام شما ارسال نشد!")
+                            $("#show_error").addClass("error-box");
+                            $("#show_error").addClass("form-box-p");
                             setTimeout(() => {
-                                $("#show_error").innerText()
+                                $("#show_error").innerText("")
                                 $("#show_error").removeClass("error-box");
+                                $("#show_error").removeClass("form-box-p");
                             }, 2000)
                         }
+                        $('#msg_text').removeAttr("disabled");
                     }
                 });
             }

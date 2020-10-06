@@ -35,8 +35,6 @@ switch ($refer) {
             $result_data = $_POST['frm_login'];
             if ($result_data['username'] && $result_data['password']) {
                 if (user_login($result_data['username'], $result_data['password'])) {
-                    $_SESSION['msg'] = "خوش آمدید";
-                    $_SESSION['msg_status'] = "success";
                     header("location: ../../index.php");
                 } else {
                     header("location: ../../login/login.php");

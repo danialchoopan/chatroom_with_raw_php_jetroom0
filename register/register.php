@@ -35,6 +35,7 @@ if (is_user_login()) {
         <input type="text" name="frm_register[username]" placeholder="نام کاربری">
         <input type="password" name="frm_register[password]" placeholder="رمز عبور">
         <input type="submit" name="submit_btn" value="نام نویسی">
+        <a class="a-link-auth" href="../login/login.php">نام نویسی کرده اید همین حالا وارد شود !</a>
     </form>
 </div>
 </body>

@@ -83,6 +83,7 @@ input[type="submit"]:hover {
     border-radius: 10px;
     border: 3px dashed white;
     width: 70%;
+    overflow: hidden;
 }
 
 .msg_shows div {
@@ -133,4 +134,9 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background: #ff2e63;
     color: #000;
+}
+.a-link-auth{
+    color: white;
+    text-decoration: white;
+    margin: 5px;
 }

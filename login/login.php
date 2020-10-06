@@ -34,6 +34,7 @@ if (is_user_login()) {
         <input type="text" name="frm_login[username]" placeholder="نام کاربری">
         <input type="password" name="frm_login[password]" placeholder="رمز عبور">
         <input type="submit" name="submit_btn" value="ورود">
+        <a class="a-link-auth" href="../register/register.php">هنوز در جتروم نام نویسی نکرده اید همین حالا نام نویسی کنید !</a>
     </form>
 </div>
 </body>
