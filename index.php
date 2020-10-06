@@ -16,6 +16,8 @@ if (!is_user_login()) {
 
 </head>
 <body>
+<p class="form-box-p error-box" id="show_error"></p>
+<input type="button" class="btn_logout" value="خارج شدن" id="logout_btn"/>
 <?php
 if (isset($_SESSION['msg']) || isset($_SESSION['msg_status'])):
     ?>
@@ -29,16 +31,12 @@ endif;
 ?>
 <section class="chat-box">
     <header class="chat-header">جتروم</header>
-    <div>پیام </div>
-    <div>پیام </div>
-    <div>پیام </div>
-    <div>پیام </div>
-    <div>پیام </div>
-    <div>پیام </div>
-    <div>پیام </div>
-    <div>پیام </div>
-    <div>پیام </div>
-    <input type="text" placeholder="پیام خود را وارد کنید ...">
+    <div class="msg_shows" id="msg_show_box">
+
+    </div>
+    <input type="text" id="msg_text" placeholder="پیام خود را وارد کنید ...">
 </section>
+<script src="assets/js/jquery-3.5.1.min.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -2,6 +2,11 @@
 require_once 'config.php';
 $refer = explode('/', $_SERVER['HTTP_REFERER']);
 $refer = end($refer);
+switch ($_GET['do_to']) {
+    case "logout":
+        logout();
+        break;
+}
 switch ($refer) {
     case "register.php":
         if (isset($_POST['frm_register'])) {
@@ -43,7 +48,7 @@ switch ($refer) {
                 $_SESSION['msg'] = " نام کاربری و رمز عبور اجباری است";
                 $_SESSION['msg_status'] = "error";
             }
-        }else{
+        } else {
             exit("500");
         }
         break;
