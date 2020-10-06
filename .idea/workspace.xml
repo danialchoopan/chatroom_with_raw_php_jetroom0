@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8106031b-e68a-469d-a9e7-982e846c6f53" name="Default Changelist" comment="" />
+    <list default="true" id="8106031b-e68a-469d-a9e7-982e846c6f53" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/php/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/php/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/messages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +22,9 @@
         <option value="CSS File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1iTKL7zb3hoj33KBYB0vqzylVSH" />
   <component name="ProjectViewState">
@@ -43,7 +52,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601926089668</updated>
-      <workItem from="1601926095669" duration="10345000" />
+      <workItem from="1601926095669" duration="10950000" />
+      <workItem from="1601971129053" duration="1389000" />
     </task>
     <servers />
   </component>
@@ -55,10 +65,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="46" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1601926958781" />
-    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1601933201428">
+    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1601936615670">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1601933201428" />
+    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1601936615670" />
     <state x="526" y="134" key="refactoring.ChangeSignatureDialog" timestamp="1601933738848">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

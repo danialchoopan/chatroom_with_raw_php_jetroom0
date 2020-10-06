@@ -27,5 +27,18 @@ if (isset($_SESSION['msg']) || isset($_SESSION['msg_status'])):
     unset($_SESSION['msg_status']);
 endif;
 ?>
+<section class="chat-box">
+    <header class="chat-header">جتروم</header>
+    <div>پیام </div>
+    <div>پیام </div>
+    <div>پیام </div>
+    <div>پیام </div>
+    <div>پیام </div>
+    <div>پیام </div>
+    <div>پیام </div>
+    <div>پیام </div>
+    <div>پیام </div>
+    <input type="text" placeholder="پیام خود را وارد کنید ...">
+</section>
 </body>
 </html>

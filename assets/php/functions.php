@@ -15,7 +15,7 @@ function send_message($text)
 function get_messages()
 {
     global $database_connection;
-    $result = $database_connection->prepare("SELECT * FROM `messages` ORDER BY `created_at` DESC LIMIT 5");
+    $result = $database_connection->prepare("SELECT * FROM `messages` ORDER BY `created_at` DESC LIMIT 7");
     if ($result->execute()) {
         return json_encode(array_reverse($result->fetchAll(2)));
     } else

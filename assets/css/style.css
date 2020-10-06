@@ -75,3 +75,27 @@ input[type="submit"]:hover {
     background-color: indianred;
     border-radius: 5px;
 }
+
+.chat-box {
+    margin: 15px auto;
+    padding: 5px;
+    background: #252a34;
+    border-radius: 10px;
+    border: 3px dashed white;
+    width: 70%;
+}
+
+.chat-box div {
+    color: #fff;
+    margin: 6px 15px;
+    padding: 5px;
+}
+
+.chat-header {
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    color: #fff;
+    background: #888888;
+    border-radius: 10px;
+}
