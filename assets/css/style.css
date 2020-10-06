@@ -1,9 +1,11 @@
+@import "vazirFont.css";
+
 * {
     direction: rtl;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Vazir;
+    font-family: VazirFont;
 }
 
 body {
@@ -101,6 +103,19 @@ input[type="submit"]:hover {
     border-radius: 10px;
 }
 
+.btn_delete_account {
+    background: red;
+    color: #fff;
+    transition: all 0.3s;
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    width: 160px;
+    font-size: 18px;
+}
+
 .btn_logout {
     background: red;
     color: #fff;
@@ -135,7 +150,8 @@ input[type="submit"]:hover {
     background: #ff2e63;
     color: #000;
 }
-.a-link-auth{
+
+.a-link-auth {
     color: white;
     text-decoration: white;
     margin: 5px;

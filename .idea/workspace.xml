@@ -20,13 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8106031b-e68a-469d-a9e7-982e846c6f53" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/css/vazirFont.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Vazir.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Vazir.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Vazir.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Vazir.woff2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/php/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/php/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/php/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/php/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/php/messages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +44,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -57,6 +62,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -81,6 +87,9 @@
       <workItem from="1601971129053" duration="1577000" />
       <workItem from="1601981754407" duration="5957000" />
       <workItem from="1601988687526" duration="1259000" />
+      <workItem from="1602010806357" duration="349000" />
+      <workItem from="1602012127300" duration="2613000" />
+      <workItem from="1602015375318" duration="64000" />
     </task>
     <servers />
   </component>
@@ -103,6 +112,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602014618076">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1602014618076" />
     <state x="488" y="46" key="#com.intellij.ide.util.MemberChooser" timestamp="1601926958781">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -119,9 +132,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1601986299698" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1601986298872">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1602014701562">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1601986298872" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1602014701562" />
   </component>
 </project>

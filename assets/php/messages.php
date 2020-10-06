@@ -15,6 +15,7 @@ switch ($_GET["msg_do"]) {
                 $result_users->execute([$username_id]);
                 $message_return["nickname"] = $result_users->fetch(2)["nick_name"];
                 $message_return["message"] = $message->message;
+                $message_return["created_at"] = $message->created_at;
                 $messages_return[] = $message_return;
             }
             echo json_encode($messages_return);

@@ -13,11 +13,11 @@ $(document).ready(function () {
                     success: function (data) {
                         e.target.value = "";
                         if (data.status === "error") {
-                            $("#show_error").innerText("پیام شما ارسال نشد!")
+                            $("#show_error").text("پیام شما ارسال نشد!")
                             $("#show_error").addClass("error-box");
                             $("#show_error").addClass("form-box-p");
                             setTimeout(() => {
-                                $("#show_error").innerText("")
+                                $("#show_error").text("")
                                 $("#show_error").removeClass("error-box");
                                 $("#show_error").removeClass("form-box-p");
                             }, 2000)
@@ -37,7 +37,7 @@ $(document).ready(function () {
             success: function (data) {
                 let div_msg = ``;
                 data.forEach(obj_data => {
-                    div_msg += `<div>${obj_data.nickname} : ${obj_data.message}</div>`;
+                    div_msg += `<div>${obj_data.created_at} | ${obj_data.nickname} : ${obj_data.message}</div>`;
                 });
 
                 console.log(div_msg);
@@ -45,7 +45,7 @@ $(document).ready(function () {
             }
         });
     }, 500);
-    //login
+    //logout
     $("#logout_btn").click(function () {
         $.ajax({
             type: 'POST',
@@ -54,6 +54,31 @@ $(document).ready(function () {
                 window.location = "login/login.php"
             }
         });
+    });
+
+    //delete account
+    $("#delete_account").click(function () {
+        if (confirm("ایا از حذف فوری حساب خود مطمئن هستید ؟")) {
+            $.ajax({
+                type: 'POST',
+                url: 'assets/php/auth.php?do_to=delete_account',
+                success: function (data) {
+                    if (data === "true") {
+                        window.location = "login/login.php";
+                    } else if (data === "false") {
+                        $("#show_error").text("مشکلی در ارتباط پیش آمده لطفا بعدا امتحان کنید!")
+                        $("#show_error").addClass("error-box");
+                        $("#show_error").addClass("form-box-p");
+                        setTimeout(() => {
+                            $("#show_error").text("")
+                            $("#show_error").removeClass("error-box");
+                            $("#show_error").removeClass("form-box-p");
+                        }, 2000)
+
+                    }
+                }
+            });
+        }
     });
 
 });

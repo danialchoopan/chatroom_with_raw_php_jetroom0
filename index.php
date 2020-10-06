@@ -18,6 +18,7 @@ if (!is_user_login()) {
 <body>
 <p id="show_error"></p>
 <input type="button" class="btn_logout" value="خارج شدن" id="logout_btn"/>
+<input type="button" class="btn_delete_account" value="حذف فوری حساب" id="delete_account"/>
 <?php
 if (isset($_SESSION['msg']) || isset($_SESSION['msg_status'])):
     ?>

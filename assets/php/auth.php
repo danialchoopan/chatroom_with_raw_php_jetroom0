@@ -6,6 +6,16 @@ switch ($_GET['do_to']) {
     case "logout":
         logout();
         break;
+    case "delete_account":
+
+        if(delete_account()){
+            $_SESSION['msg'] = "حساب شما با موفقیت حدف گردید";
+            $_SESSION['msg_status'] = "success";
+            echo "true";
+        }else{
+            echo "false";
+        }
+        break;
 }
 switch ($refer) {
     case "register.php":

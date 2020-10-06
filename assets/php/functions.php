@@ -15,7 +15,7 @@ function send_message($text)
 function get_messages()
 {
     global $database_connection;
-    $result = $database_connection->prepare("SELECT * FROM `messages` ORDER BY `created_at` DESC LIMIT 7");
+    $result = $database_connection->prepare("SELECT * FROM `messages` ORDER BY `created_at` DESC LIMIT 10");
     if ($result->execute()) {
         return json_encode(array_reverse($result->fetchAll(2)));
     } else
@@ -58,6 +58,23 @@ function is_user_login()
 function logout()
 {
     if (isset($_SESSION['user_id'])) {
+        unset($_SESSION['user_id']);
+        session_destroy();
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function delete_account()
+{
+    if (isset($_SESSION['user_id'])) {
+        global $database_connection;
+        $user_id = $_SESSION['user_id'];
+        $result = $database_connection->prepare("DELETE FROM `users` WHERE `id`=?");
+        if (!$result->execute([$user_id])) {
+            return false;
+        }
         unset($_SESSION['user_id']);
         session_destroy();
         return true;
