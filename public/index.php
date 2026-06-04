@@ -49,6 +49,10 @@ $router->add('/admin', 'AdminController', 'index', 'GET');
 $router->add('/admin/toggle-block', 'AdminController', 'toggleBlock', 'POST');
 $router->add('/admin/delete-user', 'AdminController', 'deleteUser', 'POST');
 $router->add('/api/admin/delete-message', 'AdminController', 'deleteMessage', 'POST');
+$router->add('/admin/rooms', 'AdminController', 'rooms', 'GET');
+$router->add('/admin/rooms/add', 'AdminController', 'addRoom', 'POST');
+$router->add('/admin/rooms/edit', 'AdminController', 'editRoom', 'POST');
+$router->add('/admin/rooms/delete', 'AdminController', 'deleteRoom', 'POST');
 
 // Default Route
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
