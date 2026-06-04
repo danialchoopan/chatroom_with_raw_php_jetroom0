@@ -16,4 +16,28 @@ class Room extends Model {
         $stmt->execute(['id' => $id]);
         return $stmt->fetch();
     }
+
+    public function create($name, $description, $slug) {
+        $stmt = $this->db->prepare("INSERT INTO rooms (name, description, slug) VALUES (:name, :description, :slug)");
+        return $stmt->execute([
+            'name' => $name,
+            'description' => $description,
+            'slug' => $slug
+        ]);
+    }
+
+    public function update($id, $name, $description, $slug) {
+        $stmt = $this->db->prepare("UPDATE rooms SET name = :name, description = :description, slug = :slug WHERE id = :id");
+        return $stmt->execute([
+            'id' => $id,
+            'name' => $name,
+            'description' => $description,
+            'slug' => $slug
+        ]);
+    }
+
+    public function delete($id) {
+        $stmt = $this->db->prepare("DELETE FROM rooms WHERE id = :id");
+        return $stmt->execute(['id' => $id]);
+    }
 }

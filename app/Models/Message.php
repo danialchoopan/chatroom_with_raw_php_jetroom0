@@ -8,7 +8,7 @@ class Message extends Model {
     public function getByRoomId($roomId, $limit = 50) {
         $stmt = $this->db->prepare("
             SELECT * FROM (
-                SELECT m.*, u.username
+                SELECT m.*, u.username, u.role as user_role
                 FROM messages m
                 JOIN users u ON m.user_id = u.id
                 WHERE m.room_id = :room_id
@@ -33,5 +33,10 @@ class Message extends Model {
             'message' => $message,
             'image_path' => $imagePath
         ]);
+    }
+
+    public function delete($id) {
+        $stmt = $this->db->prepare("DELETE FROM messages WHERE id = :id");
+        return $stmt->execute(['id' => $id]);
     }
 }

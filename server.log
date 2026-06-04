@@ -386,3 +386,88 @@
 [Thu Jun  4 18:34:15 2026] [::1]:41100 Accepted
 [Thu Jun  4 18:34:15 2026] [::1]:41100 [200]: GET /api/private/messages?user_id=2
 [Thu Jun  4 18:34:15 2026] [::1]:41100 Closing
+[Thu Jun  4 19:37:05 2026] [::1]:51340 Accepted
+[Thu Jun  4 19:37:05 2026] [::1]:51340 [200]: GET /login
+[Thu Jun  4 19:37:05 2026] [::1]:51340 Closing
+[Thu Jun  4 19:37:05 2026] [::1]:51352 Accepted
+[Thu Jun  4 19:37:05 2026] [::1]:51364 Accepted
+[Thu Jun  4 19:37:05 2026] [::1]:51352 [200]: GET /static/assets/css/tailwind.css
+[Thu Jun  4 19:37:05 2026] [::1]:51364 [200]: GET /static/assets/js/chat.js
+[Thu Jun  4 19:37:05 2026] [::1]:51352 Closing
+[Thu Jun  4 19:37:05 2026] [::1]:51364 Closing
+[Thu Jun  4 19:37:06 2026] [::1]:51374 Accepted
+[Thu Jun  4 19:37:06 2026] [::1]:51374 [302]: POST /login
+[Thu Jun  4 19:37:06 2026] [::1]:51374 Closing
+[Thu Jun  4 19:37:06 2026] [::1]:51376 Accepted
+[Thu Jun  4 19:37:06 2026] [::1]:51376 [200]: GET /chat
+[Thu Jun  4 19:37:06 2026] [::1]:51376 Closing
+[Thu Jun  4 19:37:06 2026] [::1]:51390 Accepted
+[Thu Jun  4 19:37:06 2026] [::1]:51406 Accepted
+[Thu Jun  4 19:37:06 2026] [::1]:51390 [200]: GET /static/assets/css/tailwind.css
+[Thu Jun  4 19:37:06 2026] [::1]:51406 [200]: GET /static/assets/js/chat.js
+[Thu Jun  4 19:37:06 2026] [::1]:51390 Closing
+[Thu Jun  4 19:37:06 2026] [::1]:51406 Closing
+[Thu Jun  4 19:37:06 2026] [::1]:51420 Accepted
+[Thu Jun  4 19:37:07 2026] [::1]:51420 [200]: GET /api/chat/messages?room_id=1
+[Thu Jun  4 19:37:07 2026] [::1]:51420 Closing
+[Thu Jun  4 19:37:07 2026] [::1]:51434 Accepted
+[Thu Jun  4 19:37:07 2026] [::1]:51434 [200]: GET /chat
+[Thu Jun  4 19:37:07 2026] [::1]:51434 Closing
+[Thu Jun  4 19:37:07 2026] [::1]:51444 Accepted
+[Thu Jun  4 19:37:07 2026] [::1]:51446 Accepted
+[Thu Jun  4 19:37:07 2026] [::1]:51444 [200]: GET /static/assets/css/tailwind.css
+[Thu Jun  4 19:37:07 2026] [::1]:51444 Closing
+[Thu Jun  4 19:37:07 2026] [::1]:51446 [200]: GET /static/assets/js/chat.js
+[Thu Jun  4 19:37:07 2026] [::1]:51446 Closing
+[Thu Jun  4 19:37:07 2026] [::1]:51460 Accepted
+[Thu Jun  4 19:37:07 2026] [::1]:51460 [200]: GET /api/chat/messages?room_id=1
+[Thu Jun  4 19:37:07 2026] [::1]:51460 Closing
+[Thu Jun  4 19:37:09 2026] [::1]:51468 Accepted
+[Thu Jun  4 19:37:09 2026] PHP Warning:  Undefined array key "role" in /app/app/Controllers/AdminController.php on line 18
+[Thu Jun  4 19:37:09 2026] [::1]:51468 [302]: GET /admin
+[Thu Jun  4 19:37:09 2026] [::1]:51468 Closing
+[Thu Jun  4 19:37:09 2026] [::1]:51482 Accepted
+[Thu Jun  4 19:37:09 2026] [::1]:51482 [302]: GET /login
+[Thu Jun  4 19:37:09 2026] [::1]:51482 Closing
+[Thu Jun  4 19:37:09 2026] [::1]:51486 Accepted
+[Thu Jun  4 19:37:09 2026] [::1]:51486 [200]: GET /chat
+[Thu Jun  4 19:37:09 2026] [::1]:51486 Closing
+[Thu Jun  4 19:37:09 2026] [::1]:51496 Accepted
+[Thu Jun  4 19:37:09 2026] [::1]:51500 Accepted
+[Thu Jun  4 19:37:09 2026] [::1]:51496 [200]: GET /static/assets/css/tailwind.css
+[Thu Jun  4 19:37:09 2026] [::1]:51500 [200]: GET /static/assets/js/chat.js
+[Thu Jun  4 19:37:09 2026] [::1]:51496 Closing
+[Thu Jun  4 19:37:09 2026] [::1]:51500 Closing
+[Thu Jun  4 19:37:10 2026] [::1]:51516 Accepted
+[Thu Jun  4 19:37:10 2026] [::1]:51516 [200]: GET /api/chat/messages?room_id=1
+[Thu Jun  4 19:37:10 2026] [::1]:51516 Closing
+[Thu Jun  4 19:37:13 2026] [::1]:40410 Accepted
+[Thu Jun  4 19:37:13 2026] [::1]:40410 [200]: GET /api/chat/messages?room_id=1
+[Thu Jun  4 19:37:13 2026] [::1]:40410 Closing
+[Thu Jun  4 19:37:16 2026] [::1]:40426 Accepted
+[Thu Jun  4 19:37:16 2026] [::1]:40426 [200]: GET /api/chat/messages?room_id=1
+[Thu Jun  4 19:37:16 2026] [::1]:40426 Closing
+[Thu Jun  4 19:37:19 2026] [::1]:40432 Accepted
+[Thu Jun  4 19:37:19 2026] [::1]:40432 [200]: GET /api/chat/messages?room_id=1
+[Thu Jun  4 19:37:19 2026] [::1]:40432 Closing
+[Thu Jun  4 19:37:22 2026] [::1]:33956 Accepted
+[Thu Jun  4 19:37:22 2026] [::1]:33956 [200]: GET /api/chat/messages?room_id=1
+[Thu Jun  4 19:37:22 2026] [::1]:33956 Closing
+[Thu Jun  4 19:37:25 2026] [::1]:33964 Accepted
+[Thu Jun  4 19:37:25 2026] [::1]:33964 [200]: GET /api/chat/messages?room_id=1
+[Thu Jun  4 19:37:25 2026] [::1]:33964 Closing
+[Thu Jun  4 19:37:28 2026] [::1]:33976 Accepted
+[Thu Jun  4 19:37:28 2026] [::1]:33976 [200]: GET /api/chat/messages?room_id=1
+[Thu Jun  4 19:37:28 2026] [::1]:33976 Closing
+[Thu Jun  4 19:37:31 2026] [::1]:59670 Accepted
+[Thu Jun  4 19:37:31 2026] [::1]:59670 [200]: GET /api/chat/messages?room_id=1
+[Thu Jun  4 19:37:31 2026] [::1]:59670 Closing
+[Thu Jun  4 19:37:34 2026] [::1]:59672 Accepted
+[Thu Jun  4 19:37:34 2026] [::1]:59672 [200]: GET /api/chat/messages?room_id=1
+[Thu Jun  4 19:37:34 2026] [::1]:59672 Closing
+[Thu Jun  4 19:37:37 2026] [::1]:59676 Accepted
+[Thu Jun  4 19:37:37 2026] [::1]:59676 [200]: GET /api/chat/messages?room_id=1
+[Thu Jun  4 19:37:37 2026] [::1]:59676 Closing
+[Thu Jun  4 19:37:40 2026] [::1]:59684 Accepted
+[Thu Jun  4 19:37:40 2026] [::1]:59684 [200]: GET /api/chat/messages?room_id=1
+[Thu Jun  4 19:37:40 2026] [::1]:59684 Closing

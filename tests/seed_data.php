@@ -20,12 +20,23 @@ use App\Models\User;
 use App\Models\Message;
 use App\Models\PrivateMessage;
 
+// Reset database file if using sqlite
+if (DB_TYPE === 'sqlite' && file_exists(SQLITE_PATH)) {
+    unlink(SQLITE_PATH);
+}
+
 try {
+    // Re-initialize via Database class constructor
+    \App\Core\Database::getInstance();
+
     $userModel = new User();
     $msgModel = new Message();
     $pmModel = new PrivateMessage();
 
     // Create some users
+    // Admin user
+    $userModel->create('admin', 'admin123', 'admin');
+
     $users = [
         ['username' => 'ali', 'password' => 'password'],
         ['username' => 'reza', 'password' => 'password'],
@@ -34,9 +45,7 @@ try {
     ];
 
     foreach ($users as $u) {
-        if (!$userModel->findByUsername($u['username'])) {
-            $userModel->create($u['username'], $u['password']);
-        }
+        $userModel->create($u['username'], $u['password']);
     }
 
     $u_ali = $userModel->findByUsername('ali')['id'];
