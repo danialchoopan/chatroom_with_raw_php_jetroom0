@@ -7,13 +7,15 @@ use App\Core\Model;
 class PrivateMessage extends Model {
     public function getChatHistory($user1, $user2, $limit = 50) {
         $stmt = $this->db->prepare("
-            SELECT pm.*, u.username as sender_name
-            FROM private_messages pm
-            JOIN users u ON pm.sender_id = u.id
-            WHERE (sender_id = :u1 AND receiver_id = :u2)
-               OR (sender_id = :u2 AND receiver_id = :u1)
-            ORDER BY pm.created_at ASC
-            LIMIT :limit
+            SELECT * FROM (
+                SELECT pm.*, u.username as sender_name
+                FROM private_messages pm
+                JOIN users u ON pm.sender_id = u.id
+                WHERE (sender_id = :u1 AND receiver_id = :u2)
+                   OR (sender_id = :u2 AND receiver_id = :u1)
+                ORDER BY pm.created_at DESC
+                LIMIT :limit
+            ) AS sub ORDER BY created_at ASC
         ");
         $stmt->bindValue(':u1', $user1, \PDO::PARAM_INT);
         $stmt->bindValue(':u2', $user2, \PDO::PARAM_INT);

@@ -24,7 +24,7 @@ use App\Models\PrivateMessage;
 function test_auth() {
     echo "Testing Auth...\n";
     $userModel = new User();
-    $username = "testuser_" . time();
+    $username = "testuser_" . bin2hex(random_bytes(5));
     $password = "password123";
 
     // Test Create

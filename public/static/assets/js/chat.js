@@ -23,7 +23,17 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(err => console.error('Error fetching messages:', err));
     }
 
+    let lastMessageCount = 0;
+    let isUserScrolling = false;
+
+    messageContainer.addEventListener('scroll', () => {
+        const threshold = 50;
+        isUserScrolling = messageContainer.scrollHeight - messageContainer.scrollTop - messageContainer.clientHeight > threshold;
+    });
+
     function renderMessages(messages) {
+        if (messages.length === lastMessageCount) return;
+
         messageContainer.innerHTML = '';
         messages.forEach(msg => {
             const div = document.createElement('div');
@@ -45,7 +55,11 @@ document.addEventListener('DOMContentLoaded', function() {
             div.innerHTML = content;
             messageContainer.appendChild(div);
         });
-        messageContainer.scrollTop = messageContainer.scrollHeight;
+
+        if (!isUserScrolling) {
+            messageContainer.scrollTop = messageContainer.scrollHeight;
+        }
+        lastMessageCount = messages.length;
     }
 
     function sendMessage() {
