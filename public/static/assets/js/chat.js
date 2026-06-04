@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const roomId = chatContainer.getAttribute('data-room-id');
     const receiverId = chatContainer.getAttribute('data-receiver-id');
     const isPrivate = !!receiverId;
+    const myUsername = document.body.getAttribute('data-my-username');
+
+    let lastMessageIds = new Set();
+    let isUserScrolling = false;
 
     function fetchMessages() {
         let url = isPrivate ? `/api/private/messages?user_id=${receiverId}` : `/api/chat/messages?room_id=${roomId}`;
@@ -18,48 +22,70 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(url)
             .then(response => response.json())
             .then(messages => {
-                renderMessages(messages);
+                if (Array.isArray(messages)) {
+                    renderMessages(messages);
+                }
             })
             .catch(err => console.error('Error fetching messages:', err));
     }
 
-    let lastMessageCount = 0;
-    let isUserScrolling = false;
-
     messageContainer.addEventListener('scroll', () => {
-        const threshold = 50;
-        isUserScrolling = messageContainer.scrollHeight - messageContainer.scrollTop - messageContainer.clientHeight > threshold;
+        const threshold = 100;
+        isUserScrolling = Math.abs(messageContainer.scrollHeight - messageContainer.scrollTop - messageContainer.clientHeight) > threshold;
     });
 
     function renderMessages(messages) {
-        if (messages.length === lastMessageCount) return;
+        // Check if there are new messages by comparing IDs
+        const currentIds = new Set(messages.map(m => m.id));
+        const hasNew = messages.some(m => !lastMessageIds.has(m.id));
+
+        if (!hasNew && messages.length === lastMessageIds.size) return;
 
         messageContainer.innerHTML = '';
+
         messages.forEach(msg => {
             const div = document.createElement('div');
-            div.className = 'message-box';
+            const author = isPrivate ? msg.sender_name : msg.username;
+            const isMe = author === myUsername;
 
-            let content = `<div class="flex items-center gap-2">
-                <span class="font-bold text-white">${isPrivate ? msg.sender_name : msg.username}</span>
-                <span class="text-xs text-gray-400">${msg.created_at}</span>
-            </div>`;
+            div.className = `message-bubble ${isMe ? 'message-out' : 'message-in'}`;
+
+            let content = `
+                <div class="message-info">
+                    <span class="message-author">${isMe ? 'شما' : author}</span>
+                </div>
+            `;
 
             if (msg.message) {
-                content += `<p class="mt-1">${msg.message}</p>`;
+                content += `<div class="message-text">${formatMessage(msg.message)}</div>`;
             }
 
             if (msg.image_path) {
-                content += `<img src="${msg.image_path}" class="mt-2 rounded max-w-xs cursor-pointer" onclick="window.open(this.src)">`;
+                content += `<img src="${msg.image_path}" class="message-image shadow-md" onclick="window.open(this.src)">`;
             }
+
+            content += `<div class="message-time">${msg.created_at.split(' ')[1]}</div>`;
 
             div.innerHTML = content;
             messageContainer.appendChild(div);
         });
 
+        lastMessageIds = currentIds;
+
+        // Auto scroll to bottom if user is not looking at history
         if (!isUserScrolling) {
-            messageContainer.scrollTop = messageContainer.scrollHeight;
+            scrollToBottom();
         }
-        lastMessageCount = messages.length;
+    }
+
+    function formatMessage(text) {
+        // Simple XSS is already handled by backend htmlspecialchars,
+        // here we can add link detection or line break handling
+        return text.replace(/\n/g, '<br>');
+    }
+
+    function scrollToBottom() {
+        messageContainer.scrollTop = messageContainer.scrollHeight;
     }
 
     function sendMessage() {
@@ -76,6 +102,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let url = isPrivate ? '/api/private/send' : '/api/chat/send';
 
+        messageInput.value = ''; // Clear immediately for UX
+
         fetch(url, {
             method: 'POST',
             body: formData
@@ -83,8 +111,10 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(res => {
             if (res.status === 'success') {
-                messageInput.value = '';
                 fetchMessages();
+                isUserScrolling = false; // Force scroll to bottom on my own message
+            } else {
+                alert('خطا در ارسال پیام');
             }
         });
     }
@@ -106,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(res => {
             if (res.status === 'success') {
                 fetchMessages();
+                isUserScrolling = false;
             } else {
                 alert('خطا در آپلود: ' + res.message);
             }
@@ -126,4 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Auto Refresh every 3 seconds
     setInterval(fetchMessages, 3000);
     fetchMessages();
+
+    // Initial scroll
+    setTimeout(scrollToBottom, 500);
 });

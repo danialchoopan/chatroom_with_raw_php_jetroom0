@@ -242,3 +242,147 @@
 [Thu Jun  4 18:01:04 2026] [::1]:51656 Accepted
 [Thu Jun  4 18:01:04 2026] [::1]:51656 [200]: GET /api/private/messages?user_id=2
 [Thu Jun  4 18:01:04 2026] [::1]:51656 Closing
+[Thu Jun  4 18:22:52 2026] [::1]:55860 Accepted
+[Thu Jun  4 18:22:52 2026] [::1]:55860 [200]: GET /login
+[Thu Jun  4 18:22:52 2026] [::1]:55860 Closing
+[Thu Jun  4 18:22:52 2026] [::1]:55868 Accepted
+[Thu Jun  4 18:22:52 2026] [::1]:55882 Accepted
+[Thu Jun  4 18:22:52 2026] [::1]:55868 [200]: GET /static/assets/css/tailwind.css
+[Thu Jun  4 18:22:52 2026] [::1]:55882 [200]: GET /static/assets/js/chat.js
+[Thu Jun  4 18:22:52 2026] [::1]:55868 Closing
+[Thu Jun  4 18:22:52 2026] [::1]:55882 Closing
+[Thu Jun  4 18:22:52 2026] [::1]:55898 Accepted
+[Thu Jun  4 18:22:52 2026] [::1]:55898 [302]: POST /login
+[Thu Jun  4 18:22:52 2026] [::1]:55898 Closing
+[Thu Jun  4 18:22:52 2026] [::1]:55900 Accepted
+[Thu Jun  4 18:22:52 2026] [::1]:55900 [200]: GET /chat
+[Thu Jun  4 18:22:52 2026] [::1]:55900 Closing
+[Thu Jun  4 18:22:52 2026] [::1]:55914 Accepted
+[Thu Jun  4 18:22:52 2026] [::1]:55914 [200]: GET /static/assets/css/tailwind.css
+[Thu Jun  4 18:22:52 2026] [::1]:55914 Closing
+[Thu Jun  4 18:22:52 2026] [::1]:55926 Accepted
+[Thu Jun  4 18:22:52 2026] [::1]:55926 [200]: GET /static/assets/js/chat.js
+[Thu Jun  4 18:22:52 2026] [::1]:55926 Closing
+[Thu Jun  4 18:22:52 2026] [::1]:55938 Accepted
+[Thu Jun  4 18:22:52 2026] [::1]:55938 [200]: GET /api/chat/messages?room_id=1
+[Thu Jun  4 18:22:52 2026] [::1]:55938 Closing
+[Thu Jun  4 18:22:55 2026] [::1]:55940 Accepted
+[Thu Jun  4 18:22:55 2026] [::1]:55940 [200]: GET /private?user_id=2
+[Thu Jun  4 18:22:55 2026] [::1]:55940 Closing
+[Thu Jun  4 18:22:55 2026] [::1]:55946 Accepted
+[Thu Jun  4 18:22:55 2026] [::1]:55958 Accepted
+[Thu Jun  4 18:22:55 2026] [::1]:55946 [200]: GET /static/assets/css/tailwind.css
+[Thu Jun  4 18:22:55 2026] [::1]:55958 [200]: GET /static/assets/js/chat.js
+[Thu Jun  4 18:22:55 2026] [::1]:55946 Closing
+[Thu Jun  4 18:22:55 2026] [::1]:55958 Closing
+[Thu Jun  4 18:22:55 2026] [::1]:55964 Accepted
+[Thu Jun  4 18:22:55 2026] [::1]:55964 [200]: GET /api/private/messages?user_id=2
+[Thu Jun  4 18:22:55 2026] [::1]:55964 Closing
+[Thu Jun  4 18:30:33 2026] [::1]:41094 Accepted
+[Thu Jun  4 18:30:33 2026] [::1]:41094 [200]: GET /login
+[Thu Jun  4 18:30:33 2026] [::1]:41094 Closing
+[Thu Jun  4 18:30:33 2026] [::1]:41102 Accepted
+[Thu Jun  4 18:30:33 2026] [::1]:41102 [200]: GET /static/assets/css/tailwind.css
+[Thu Jun  4 18:30:33 2026] [::1]:41102 Closing
+[Thu Jun  4 18:30:33 2026] [::1]:41104 Accepted
+[Thu Jun  4 18:30:33 2026] [::1]:41104 [200]: GET /static/assets/js/chat.js
+[Thu Jun  4 18:30:33 2026] [::1]:41104 Closing
+[Thu Jun  4 18:30:33 2026] [::1]:41120 Accepted
+[Thu Jun  4 18:30:33 2026] [::1]:41120 [302]: POST /login
+[Thu Jun  4 18:30:33 2026] [::1]:41120 Closing
+[Thu Jun  4 18:30:33 2026] [::1]:41124 Accepted
+[Thu Jun  4 18:30:34 2026] [::1]:41124 [200]: GET /chat
+[Thu Jun  4 18:30:34 2026] [::1]:41124 Closing
+[Thu Jun  4 18:30:34 2026] [::1]:41140 Accepted
+[Thu Jun  4 18:30:34 2026] [::1]:41146 Accepted
+[Thu Jun  4 18:30:34 2026] [::1]:41140 [200]: GET /static/assets/css/tailwind.css
+[Thu Jun  4 18:30:34 2026] [::1]:41140 Closing
+[Thu Jun  4 18:30:34 2026] [::1]:41146 [200]: GET /static/assets/js/chat.js
+[Thu Jun  4 18:30:34 2026] [::1]:41146 Closing
+[Thu Jun  4 18:30:34 2026] [::1]:41156 Accepted
+[Thu Jun  4 18:30:34 2026] [::1]:41156 [200]: GET /api/chat/messages?room_id=1
+[Thu Jun  4 18:30:34 2026] [::1]:41156 Closing
+[Thu Jun  4 18:30:36 2026] [::1]:41164 Accepted
+[Thu Jun  4 18:30:36 2026] [::1]:41164 [200]: GET /private?user_id=2
+[Thu Jun  4 18:30:36 2026] [::1]:41164 Closing
+[Thu Jun  4 18:30:36 2026] [::1]:41172 Accepted
+[Thu Jun  4 18:30:36 2026] [::1]:41178 Accepted
+[Thu Jun  4 18:30:36 2026] [::1]:41172 [200]: GET /static/assets/css/tailwind.css
+[Thu Jun  4 18:30:36 2026] [::1]:41178 [200]: GET /static/assets/js/chat.js
+[Thu Jun  4 18:30:36 2026] [::1]:41172 Closing
+[Thu Jun  4 18:30:36 2026] [::1]:41178 Closing
+[Thu Jun  4 18:30:36 2026] [::1]:41184 Accepted
+[Thu Jun  4 18:30:36 2026] [::1]:41184 [200]: GET /api/private/messages?user_id=2
+[Thu Jun  4 18:30:36 2026] [::1]:41184 Closing
+[Thu Jun  4 18:32:25 2026] [::1]:43552 Accepted
+[Thu Jun  4 18:32:25 2026] [::1]:43552 [200]: GET /login
+[Thu Jun  4 18:32:25 2026] [::1]:43552 Closing
+[Thu Jun  4 18:32:25 2026] [::1]:43558 Accepted
+[Thu Jun  4 18:32:25 2026] [::1]:43572 Accepted
+[Thu Jun  4 18:32:25 2026] [::1]:43558 [200]: GET /static/assets/css/tailwind.css
+[Thu Jun  4 18:32:25 2026] [::1]:43572 [200]: GET /static/assets/js/chat.js
+[Thu Jun  4 18:32:25 2026] [::1]:43558 Closing
+[Thu Jun  4 18:32:25 2026] [::1]:43572 Closing
+[Thu Jun  4 18:32:25 2026] [::1]:43588 Accepted
+[Thu Jun  4 18:32:25 2026] [::1]:43588 [302]: POST /login
+[Thu Jun  4 18:32:25 2026] [::1]:43588 Closing
+[Thu Jun  4 18:32:25 2026] [::1]:43596 Accepted
+[Thu Jun  4 18:32:25 2026] [::1]:43596 [200]: GET /chat
+[Thu Jun  4 18:32:25 2026] [::1]:43596 Closing
+[Thu Jun  4 18:32:25 2026] [::1]:43610 Accepted
+[Thu Jun  4 18:32:25 2026] [::1]:43614 Accepted
+[Thu Jun  4 18:32:25 2026] [::1]:43610 [200]: GET /static/assets/css/tailwind.css
+[Thu Jun  4 18:32:25 2026] [::1]:43610 Closing
+[Thu Jun  4 18:32:25 2026] [::1]:43614 [200]: GET /static/assets/js/chat.js
+[Thu Jun  4 18:32:25 2026] [::1]:43614 Closing
+[Thu Jun  4 18:32:25 2026] [::1]:43624 Accepted
+[Thu Jun  4 18:32:25 2026] [::1]:43624 [200]: GET /api/chat/messages?room_id=1
+[Thu Jun  4 18:32:25 2026] [::1]:43624 Closing
+[Thu Jun  4 18:32:27 2026] [::1]:43632 Accepted
+[Thu Jun  4 18:32:27 2026] [::1]:43632 [200]: GET /private?user_id=2
+[Thu Jun  4 18:32:27 2026] [::1]:43632 Closing
+[Thu Jun  4 18:32:27 2026] [::1]:43646 Accepted
+[Thu Jun  4 18:32:27 2026] [::1]:43662 Accepted
+[Thu Jun  4 18:32:27 2026] [::1]:43646 [200]: GET /static/assets/css/tailwind.css
+[Thu Jun  4 18:32:27 2026] [::1]:43662 [200]: GET /static/assets/js/chat.js
+[Thu Jun  4 18:32:27 2026] [::1]:43646 Closing
+[Thu Jun  4 18:32:27 2026] [::1]:43662 Closing
+[Thu Jun  4 18:32:27 2026] [::1]:43676 Accepted
+[Thu Jun  4 18:32:27 2026] [::1]:43676 [200]: GET /api/private/messages?user_id=2
+[Thu Jun  4 18:32:27 2026] [::1]:43676 Closing
+[Thu Jun  4 18:34:12 2026] [::1]:40996 Accepted
+[Thu Jun  4 18:34:12 2026] [::1]:40996 [200]: GET /login
+[Thu Jun  4 18:34:12 2026] [::1]:40996 Closing
+[Thu Jun  4 18:34:12 2026] [::1]:41002 Accepted
+[Thu Jun  4 18:34:12 2026] [::1]:41014 Accepted
+[Thu Jun  4 18:34:12 2026] [::1]:41002 [200]: GET /static/assets/css/tailwind.css
+[Thu Jun  4 18:34:12 2026] [::1]:41014 [200]: GET /static/assets/js/chat.js
+[Thu Jun  4 18:34:12 2026] [::1]:41002 Closing
+[Thu Jun  4 18:34:12 2026] [::1]:41014 Closing
+[Thu Jun  4 18:34:12 2026] [::1]:41024 Accepted
+[Thu Jun  4 18:34:12 2026] [::1]:41024 [302]: POST /login
+[Thu Jun  4 18:34:12 2026] [::1]:41024 Closing
+[Thu Jun  4 18:34:12 2026] [::1]:41040 Accepted
+[Thu Jun  4 18:34:12 2026] [::1]:41040 [200]: GET /chat
+[Thu Jun  4 18:34:12 2026] [::1]:41040 Closing
+[Thu Jun  4 18:34:12 2026] [::1]:41056 Accepted
+[Thu Jun  4 18:34:12 2026] [::1]:41062 Accepted
+[Thu Jun  4 18:34:12 2026] [::1]:41056 [200]: GET /static/assets/css/tailwind.css
+[Thu Jun  4 18:34:12 2026] [::1]:41062 [200]: GET /static/assets/js/chat.js
+[Thu Jun  4 18:34:12 2026] [::1]:41056 Closing
+[Thu Jun  4 18:34:12 2026] [::1]:41062 Closing
+[Thu Jun  4 18:34:12 2026] [::1]:41070 Accepted
+[Thu Jun  4 18:34:12 2026] [::1]:41070 [200]: GET /api/chat/messages?room_id=1
+[Thu Jun  4 18:34:12 2026] [::1]:41070 Closing
+[Thu Jun  4 18:34:15 2026] [::1]:41086 Accepted
+[Thu Jun  4 18:34:15 2026] [::1]:41086 [200]: GET /private?user_id=2
+[Thu Jun  4 18:34:15 2026] [::1]:41086 Closing
+[Thu Jun  4 18:34:15 2026] [::1]:41088 Accepted
+[Thu Jun  4 18:34:15 2026] [::1]:41090 Accepted
+[Thu Jun  4 18:34:15 2026] [::1]:41088 [200]: GET /static/assets/css/tailwind.css
+[Thu Jun  4 18:34:15 2026] [::1]:41090 [200]: GET /static/assets/js/chat.js
+[Thu Jun  4 18:34:15 2026] [::1]:41088 Closing
+[Thu Jun  4 18:34:15 2026] [::1]:41090 Closing
+[Thu Jun  4 18:34:15 2026] [::1]:41100 Accepted
+[Thu Jun  4 18:34:15 2026] [::1]:41100 [200]: GET /api/private/messages?user_id=2
+[Thu Jun  4 18:34:15 2026] [::1]:41100 Closing

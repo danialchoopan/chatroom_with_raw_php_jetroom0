@@ -6,4 +6,4 @@
     <title>جتروم - چت‌روم پیشرفته</title>
     <link rel="stylesheet" href="/static/assets/css/tailwind.css">
 </head>
-<body class="h-screen overflow-hidden">
+<body class="h-screen overflow-hidden" data-my-username="<?php echo $_SESSION['username'] ?? ''; ?>">
