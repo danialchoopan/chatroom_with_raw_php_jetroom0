@@ -2,6 +2,28 @@
 
 این پروژه یک سیستم چت‌روم مدرن، امن و با کارایی بالا است که با استفاده از PHP خام (بدون فریم‌ورک) و بر پایه معماری شی‌گرا (OOP) و الگوی طراحی MVC توسعه یافته است. ظاهر برنامه با الهام از دیسکورد و تلگرام، به صورت کاملاً مدرن و با استفاده از Tailwind CSS طراحی شده است.
 
+
+## اسکرین‌شات‌های محیط برنامه
+
+### صفحه ورود (Login)
+![صفحه ورود](./screenshots/login.png)
+
+### محیط چت‌روم (تم تیره - Dark Mode)
+![محیط چت‌روم تیره](./screenshots/chatroom_main.png)
+
+### محیط چت‌روم (تم روشن - Light Mode)
+![محیط چت‌روم روشن](./screenshots/chatroom_light.png)
+
+### پیام خصوصی (Private Message)
+![پیام خصوصی](./screenshots/private_chat.png)
+
+### پنل مدیریت کاربران (Admin Users)
+![مدیریت کاربران](./screenshots/admin_users.png)
+
+### پنل مدیریت اتاق‌ها (Admin Rooms)
+![مدیریت اتاق‌ها](./screenshots/admin_rooms.png)
+
+
 ## قابلیت‌های کلیدی
 
 - **معماری MVC:** تفکیک کامل لایه‌های داده (Model)، نمایش (View) و منطق برنامه (Controller).
@@ -59,23 +81,3 @@
 4. **اطلاعات ورود ادمین پیش‌فرض:**
    - نام کاربری: `admin`
    - رمز عبور: `admin123`
-
-## اسکرین‌شات‌های محیط برنامه
-
-### صفحه ورود (Login)
-![صفحه ورود](./screenshots/login.png)
-
-### محیط چت‌روم (تم تیره - Dark Mode)
-![محیط چت‌روم تیره](./screenshots/chatroom_main.png)
-
-### محیط چت‌روم (تم روشن - Light Mode)
-![محیط چت‌روم روشن](./screenshots/chatroom_light.png)
-
-### پیام خصوصی (Private Message)
-![پیام خصوصی](./screenshots/private_chat.png)
-
-### پنل مدیریت کاربران (Admin Users)
-![مدیریت کاربران](./screenshots/admin_users.png)
-
-### پنل مدیریت اتاق‌ها (Admin Rooms)
-![مدیریت اتاق‌ها](./screenshots/admin_rooms.png)
