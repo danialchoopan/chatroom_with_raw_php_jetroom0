@@ -44,8 +44,15 @@ $router->add('/api/private/send', 'PrivateController', 'sendMessage', 'POST');
 // Upload Routes
 $router->add('/api/upload', 'UploadController', 'upload', 'POST');
 
+// Admin Routes
+$router->add('/admin', 'AdminController', 'index', 'GET');
+$router->add('/admin/toggle-block', 'AdminController', 'toggleBlock', 'POST');
+$router->add('/admin/delete-user', 'AdminController', 'deleteUser', 'POST');
+$router->add('/api/admin/delete-message', 'AdminController', 'deleteMessage', 'POST');
+
 // Default Route
-if ($_SERVER['REQUEST_URI'] === '/' || $_SERVER['REQUEST_URI'] === '') {
+$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+if ($uri === '/' || $uri === '' || $uri === '/index.php') {
     header('Location: /chat');
     exit;
 }

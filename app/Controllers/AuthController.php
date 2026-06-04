@@ -32,9 +32,13 @@ class AuthController extends Controller {
         }
 
         $user = $this->userModel->verify($username, $password);
-        if ($user) {
+        if ($user === 'blocked') {
+            $_SESSION['error'] = "حساب کاربری شما مسدود شده است.";
+            $this->redirect('/login');
+        } elseif ($user) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
+            $_SESSION['role'] = $user['role'];
             $this->redirect('/chat');
         } else {
             $_SESSION['error'] = "نام کاربری یا رمز عبور اشتباه است.";

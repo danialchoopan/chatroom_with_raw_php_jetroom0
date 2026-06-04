@@ -5,6 +5,7 @@
 ## قابلیت‌های کلیدی
 
 - **معماری MVC:** تفکیک کامل لایه‌های داده (Model)، نمایش (View) و منطق برنامه (Controller).
+- **پنل مدیریت پیشرفته:** امکان مدیریت کاربران (مسدود سازی، رفع مسدودیت، حذف) و مدیریت پیام‌ها (حذف پیام‌های نامناسب).
 - **سیستم ۱۰ چت‌روم موضوعی:** دارای اتاق‌های گفتگو با موضوعات متنوع (برنامه‌نویسی، سخت‌افزار، عمومی و غیره).
 - **پیام خصوصی (PV):** قابلیت گفتگو به صورت دو نفره و کاملاً امن.
 - **ارسال عکس:** پشتیبانی از آپلود تصاویر در چت‌روم‌ها و پیام‌های خصوصی با اعتبارسنجی دقیق.
@@ -14,6 +15,7 @@
     - جلوگیری از XSS با پاکسازی خودکار ورودی‌ها و خروجی‌ها.
     - هش کردن رمزهای عبور با الگوریتم password_hash.
     - امنیت بالای آپلود فایل (بررسی Mime-type و تغییر نام تصادفی).
+    - کنترل سطح دسترسی (RBAC) برای محافظت از بخش مدیریت.
 - **رابط کاربری مدرن:** طراحی دو ستونه، کاملاً واکنش‌گرا (Responsive) و راست‌چین (RTL) با تم تاریک.
 - **به‌روزرسانی خودکار:** مشاهده پیام‌های جدید بدون نیاز به رفرش صفحه با استفاده از JavaScript Fetch API.
 
@@ -50,6 +52,9 @@
    - برای استفاده از **SQLite** (بدون نیاز به نصب سرور دیتابیس): مقدار `DB_TYPE` را روی `sqlite` قرار دهید. دیتابیس به صورت خودکار در `app/Database/chatroom.sqlite` ساخته می‌شود.
    - برای استفاده از **MySQL**: مقدار `DB_TYPE` را روی `mysql` قرار دهید و مشخصات سرور خود را وارد کنید. سپس کوئری‌های موجود در انتهای این فایل را در دیتابیس خود اجرا کنید.
 3. مرورگر را باز کرده و آدرس پروژه را وارد کنید (مثلاً `http://localhost/chatroom/public`).
+4. **اطلاعات ورود ادمین پیش‌فرض:**
+   - نام کاربری: `admin`
+   - رمز عبور: `admin123`
 
 ## اسکرین‌شات‌های محیط برنامه
 
@@ -62,6 +67,9 @@
 ### پیام خصوصی (Private Message)
 ![پیام خصوصی](./screenshots/private_chat.png)
 
+### پنل مدیریت (Admin Panel)
+![پنل مدیریت](./screenshots/admin_panel.png)
+
 ## کوئری‌های ساخت دیتابیس (برای MySQL)
 
 ```sql
@@ -69,6 +77,8 @@ CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
+    role ENUM('user', 'admin') DEFAULT 'user',
+    is_blocked TINYINT(1) DEFAULT 0,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -86,8 +96,8 @@ CREATE TABLE messages (
     message TEXT,
     image_path VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (room_id) REFERENCES rooms(id)
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE
 );
 
 CREATE TABLE private_messages (
@@ -97,8 +107,8 @@ CREATE TABLE private_messages (
     message TEXT,
     image_path VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (sender_id) REFERENCES users(id),
-    FOREIGN KEY (receiver_id) REFERENCES users(id)
+    FOREIGN KEY (sender_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (receiver_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
 -- درج اتاق‌های پیش‌فرض
@@ -113,4 +123,7 @@ INSERT INTO rooms (name, description, slug) VALUES
 ('امنیت و شبکه', 'هک، امنیت و مباحث شبکه', 'security'),
 ('موسیقی', 'اشتراک‌گذاری آهنگ و بحث‌های موزیکال', 'music'),
 ('تکنولوژی', 'آخرین اخبار دنیای تکنولوژی', 'tech');
+
+-- درج کاربر ادمین پیش‌فرض (پسورد: admin123)
+INSERT INTO users (username, password, role) VALUES ('admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin');
 ```

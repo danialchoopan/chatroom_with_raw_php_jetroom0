@@ -1,16 +1,24 @@
 <?php require_once __DIR__ . '/../layout/header.php'; ?>
 
-<div class="flex h-full w-full" data-room-id="<?php echo $currentRoom['id']; ?>">
+<div class="flex h-full w-full" data-room-id="<?php echo $currentRoom['id']; ?>" data-role="<?php echo $_SESSION['role'] ?? 'user'; ?>">
 
     <!-- Right Column (ستون سمت راست): Chat Environment & Online Users -->
     <div class="chat-area flex-grow flex h-full overflow-hidden relative">
         <!-- Main Chat (Center-ish) -->
         <div class="flex-grow flex flex-col h-full border-l border-gray-800">
             <header class="p-4 bg-gray-800 flex items-center justify-between border-b border-gray-900 shadow-sm z-10">
-                <div>
+                <div class="flex items-center gap-4">
                     <h1 class="font-bold text-white text-lg"># <?php echo htmlspecialchars($currentRoom['name']); ?></h1>
-                    <p class="text-xs text-gray-400"><?php echo htmlspecialchars($currentRoom['description']); ?></p>
+                    <p class="text-xs text-gray-400 hidden sm:block"><?php echo htmlspecialchars($currentRoom['description']); ?></p>
                 </div>
+                <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+                    <a href="/admin" class="bg-indigo-600/20 text-indigo-400 px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-indigo-600 hover:text-white transition flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+                        </svg>
+                        پنل مدیریت
+                    </a>
+                <?php endif; ?>
             </header>
 
             <div id="messages" class="flex-grow overflow-y-auto p-4 flex flex-col space-y-4 custom-scrollbar">
@@ -41,7 +49,12 @@
                             </div>
                             <div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-gray-900 rounded-full"></div>
                         </div>
-                        <span class="text-sm text-gray-400 group-hover:text-white transition truncate"><?php echo htmlspecialchars($user['username']); ?></span>
+                        <div class="flex flex-col truncate">
+                            <span class="text-sm text-gray-400 group-hover:text-white transition truncate"><?php echo htmlspecialchars($user['username']); ?></span>
+                            <?php if ($user['role'] === 'admin'): ?>
+                                <span class="text-[9px] text-indigo-400 font-bold uppercase tracking-tighter">Admin</span>
+                            <?php endif; ?>
+                        </div>
                     </a>
                 <?php endforeach; ?>
             </div>
@@ -71,12 +84,12 @@
 
         <!-- Room List -->
         <div class="flex-grow overflow-y-auto py-4 custom-scrollbar">
-            <div class="px-6 mb-2 text-xs font-bold text-gray-500 uppercase tracking-widest">اتاق‌های گفتگو</div>
+            <div class="px-6 mb-2 text-xs font-bold text-gray-500 uppercase tracking-widest text-right">اتاق‌های گفتگو</div>
             <div class="space-y-1 px-3">
                 <?php foreach ($rooms as $room): ?>
                     <a href="/chat?room_id=<?php echo $room['id']; ?>" class="room-item group flex items-center gap-3 p-3 rounded-xl transition <?php echo ($room['id'] == $currentRoom['id']) ? 'active bg-indigo-600/20 text-indigo-300' : 'text-gray-400 hover:bg-gray-800 hover:text-gray-200'; ?>">
                         <div class="w-10 h-10 rounded-xl bg-gray-800 flex items-center justify-center text-lg font-bold group-hover:bg-gray-700 transition">#</div>
-                        <div class="flex flex-col overflow-hidden">
+                        <div class="flex flex-col overflow-hidden text-right">
                             <span class="text-sm font-bold truncate"><?php echo htmlspecialchars($room['name']); ?></span>
                             <span class="text-xs opacity-60 truncate"><?php echo htmlspecialchars($room['description']); ?></span>
                         </div>
@@ -86,7 +99,7 @@
 
             <!-- Active PMs -->
             <?php if (!empty($activePms)): ?>
-                <div class="px-6 mt-8 mb-2 text-xs font-bold text-gray-500 uppercase tracking-widest">پیام‌های خصوصی</div>
+                <div class="px-6 mt-8 mb-2 text-xs font-bold text-gray-500 uppercase tracking-widest text-right">پیام‌های خصوصی</div>
                 <div class="space-y-1 px-3">
                     <?php foreach ($activePms as $pm): ?>
                         <a href="/private?user_id=<?php echo $pm['id']; ?>" class="room-item flex items-center gap-3 p-3 rounded-xl text-gray-400 hover:bg-gray-800 hover:text-gray-200 transition">

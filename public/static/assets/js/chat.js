@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const roomId = chatContainer.getAttribute('data-room-id');
     const receiverId = chatContainer.getAttribute('data-receiver-id');
+    const userRole = chatContainer.getAttribute('data-role');
     const isPrivate = !!receiverId;
     const myUsername = document.body.getAttribute('data-my-username');
 
@@ -48,11 +49,18 @@ document.addEventListener('DOMContentLoaded', function() {
             const author = isPrivate ? msg.sender_name : msg.username;
             const isMe = author === myUsername;
 
-            div.className = `message-bubble ${isMe ? 'message-out' : 'message-in'}`;
+            div.className = `message-bubble ${isMe ? 'message-out' : 'message-in'} relative group`;
 
             let content = `
-                <div class="message-info">
+                <div class="message-info flex justify-between items-start">
                     <span class="message-author">${isMe ? 'شما' : author}</span>
+                    ${(userRole === 'admin' && !isPrivate) ? `
+                        <button class="delete-msg-btn hidden group-hover:block text-red-400 hover:text-red-500 transition-all ml-2" data-id="${msg.id}">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    ` : ''}
                 </div>
             `;
 
@@ -61,13 +69,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             if (msg.image_path) {
-                content += `<img src="${msg.image_path}" class="message-image shadow-md" onclick="window.open(this.src)">`;
+                content += `<img src="${msg.image_path}" class="message-image shadow-md cursor-pointer" onclick="window.open(this.src)">`;
             }
 
             content += `<div class="message-time">${msg.created_at.split(' ')[1]}</div>`;
 
             div.innerHTML = content;
             messageContainer.appendChild(div);
+
+            // Add listener to delete button
+            const deleteBtn = div.querySelector('.delete-msg-btn');
+            if (deleteBtn) {
+                deleteBtn.addEventListener('click', function() {
+                    if (confirm('آیا از حذف این پیام اطمینان دارید؟')) {
+                        deleteMessage(msg.id);
+                    }
+                });
+            }
         });
 
         lastMessageIds = currentIds;
@@ -78,9 +96,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    function deleteMessage(id) {
+        const formData = new FormData();
+        formData.append('message_id', id);
+
+        fetch('/api/admin/delete-message', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(res => {
+            if (res.success) {
+                fetchMessages();
+            } else {
+                alert('خطا در حذف پیام');
+            }
+        });
+    }
+
     function formatMessage(text) {
-        // Simple XSS is already handled by backend htmlspecialchars,
-        // here we can add link detection or line break handling
         return text.replace(/\n/g, '<br>');
     }
 
