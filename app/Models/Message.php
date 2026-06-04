@@ -7,12 +7,14 @@ use App\Core\Model;
 class Message extends Model {
     public function getByRoomId($roomId, $limit = 50) {
         $stmt = $this->db->prepare("
-            SELECT m.*, u.username
-            FROM messages m
-            JOIN users u ON m.user_id = u.id
-            WHERE m.room_id = :room_id
-            ORDER BY m.created_at ASC
-            LIMIT :limit
+            SELECT * FROM (
+                SELECT m.*, u.username
+                FROM messages m
+                JOIN users u ON m.user_id = u.id
+                WHERE m.room_id = :room_id
+                ORDER BY m.created_at DESC
+                LIMIT :limit
+            ) AS sub ORDER BY created_at ASC
         ");
         $stmt->bindValue(':room_id', $roomId, \PDO::PARAM_INT);
         $stmt->bindValue(':limit', $limit, \PDO::PARAM_INT);
