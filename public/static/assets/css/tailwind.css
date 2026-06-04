@@ -1,0 +1,68 @@
+/* Tailwind CSS Base Layer (Minimal required for modern UI) */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    direction: rtl;
+    background-color: #313338; /* Discord dark theme */
+    color: #dbdee1;
+}
+
+.sidebar {
+    background-color: #2b2d31;
+    width: 240px;
+    height: 100vh;
+}
+
+.chat-area {
+    background-color: #313338;
+    flex-grow: 1;
+    height: 100vh;
+}
+
+.user-list {
+    background-color: #2b2d31;
+    width: 200px;
+    height: 100vh;
+}
+
+.room-item:hover, .room-item.active {
+    background-color: #3f4147;
+    border-radius: 4px;
+}
+
+.message-box {
+    background-color: #383a40;
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin-bottom: 8px;
+}
+
+.input-container {
+    background-color: #383a40;
+    border-radius: 8px;
+    margin: 0 16px 24px 16px;
+}
+
+/* Tailwind-like Utility Classes */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.h-full { height: 100%; }
+.overflow-y-auto { overflow-y: auto; }
+.p-4 { padding: 1rem; }
+.m-2 { margin: 0.5rem; }
+.cursor-pointer { cursor: pointer; }
+.font-bold { font-weight: bold; }
+.text-sm { font-size: 0.875rem; }
+.text-xs { font-size: 0.75rem; }
+.text-white { color: white; }
+.rounded { border-radius: 0.25rem; }
+.border-none { border: none; }
+.outline-none { outline: none; }
+.bg-indigo-500 { background-color: #5865f2; }
+.w-full { width: 100%; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.p-2 { padding: 0.5rem; }
+.gap-2 { gap: 0.5rem; }
+.hidden { display: none; }
